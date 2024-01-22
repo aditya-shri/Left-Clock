@@ -28,5 +28,5 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           tag: ${{ steps.tagger.outputs.new-tag }}
-          name: Release
+          name: LeftClock - ${{ steps.tagger.outputs.new-tag }}
           body: ${{ steps.changelog.outputs.changelog }}
