@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: gnome-before-45
       - name: Generate changelog
         id: changelog
         uses: metcalfc/changelog-generator@v4.2.0
