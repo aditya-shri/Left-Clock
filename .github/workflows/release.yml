@@ -15,12 +15,13 @@ jobs:
       - name: Create Zip
         uses: montudor/action-zip@v1
         with:
-          args: zip -qq LeftClock@adityashrivastava.tk.zip extension.js metadata.json
+          args: zip -qq 'LeftClock@adityashrivastava.tk.zip' extension.js metadata.json
       - name: Upload Zip as Artifact
         id: arti
         uses: actions/upload-artifact@v2
         with:
           name: LeftClock@adityashrivastava.tk.zip
+          path: LeftClock@adityashrivastava.tk.zip
       - name: Generate changelog
         id: changelog
         uses: metcalfc/changelog-generator@v4.2.0
