@@ -21,6 +21,5 @@ jobs:
         id: create_release
         uses: ncipollo/release-action@v1
         with:
-          tag: ${{ github.ref }}
-          name: Release ${{ github.ref }}
+          name: Release
           body: ${{ steps.changelog.outputs.changelog }}
