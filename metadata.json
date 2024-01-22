@@ -3,11 +3,6 @@
   "description": "Replaces the activity button with clock and moves it to left side of top bar.",
   "name": "Left Clock",
   "shell-version": [
-    "40",
-    "41",
-    "42",
-    "43",
-    "44",
     "45",
     "46"
   ],
