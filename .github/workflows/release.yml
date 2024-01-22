@@ -17,9 +17,16 @@ jobs:
         uses: metcalfc/changelog-generator@v4.2.0
         with:
           myToken: ${{ secrets.GITHUB_TOKEN }}
+      - uses: phish108/autotag-action@v1.1.55
+        id: tagger
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN}}
+          with-v: "true"
+          dry-run: "true"
       - name: Create Release
         id: create_release
         uses: ncipollo/release-action@v1
         with:
+          tag: ${{ steps.tagger.outputs.new-tag }}
           name: Release
           body: ${{ steps.changelog.outputs.changelog }}
