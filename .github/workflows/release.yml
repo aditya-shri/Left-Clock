@@ -40,4 +40,4 @@ jobs:
           tag: v${{ steps.tagger.outputs.new-tag }}
           name: LeftClock - v${{ steps.tagger.outputs.new-tag }}
           body: ${{ steps.changelog.outputs.changelog }}
-          artifacts: ${{ steps.arti.with.name }}
+          artifacts: './LeftClock@adityashrivastava.tk.zip'
