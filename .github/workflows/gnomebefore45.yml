@@ -10,15 +10,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code #Checkout Code
-        uses: actions/checkout@v2
+        uses: actions/checkout
       - name: Generate changelog #Generate Changelog
         id: changelog
-        uses: metcalfc/changelog-generator@v3.0.0
+        uses: metcalfc/changelog-generator
         with:
           myToken: ${{ secrets.GIT_PAT_TOKEN }}
       - name: Create Release #Create a lease based on a new tag
         id: create_release
-        uses: actions/create-release@v1
+        uses: actions/create-release
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_PAT_TOKEN}}
         with:
