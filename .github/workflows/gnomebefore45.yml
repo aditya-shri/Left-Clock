@@ -21,6 +21,5 @@ jobs:
         id: create_release
         uses: ncipollo/release-action@v1
         with:
-          tag: ${{ github.ref }}
-          name: Release ${{ github.ref }} - Gnome<=44
+          name: Release - Gnome<=44
           body: ${{ steps.changelog.outputs.changelog }}
