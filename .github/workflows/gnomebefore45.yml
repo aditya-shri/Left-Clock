@@ -30,3 +30,4 @@ jobs:
           tag: v${{ steps.tagger.outputs.new-tag }}
           name: LeftClock - v${{ steps.tagger.outputs.new-tag }}
           body: ${{ steps.changelog.outputs.changelog }}
+          commit: gnome-before-45
