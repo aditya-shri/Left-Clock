@@ -1,3 +1,4 @@
+// Gnome Left Clock for Gnome<=44
 const Main = imports.ui.main;
 let monitorsChangedEvent = null;
 const SessionMode = imports.ui.sessionMode;
