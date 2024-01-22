@@ -21,12 +21,12 @@ jobs:
         id: tagger
         with:
           github-token: ${{ secrets.GITHUB_TOKEN}}
-          with-v: "true"
-          dry-run: "true"
+          with-v: true
+          dry-run: true
       - name: Create Release
         id: create_release
         uses: ncipollo/release-action@v1
         with:
-          tag: ${{ steps.tagger.outputs.new-tag }}
-          name: LeftClock - ${{ steps.tagger.outputs.new-tag }}
+          tag: v${{ steps.tagger.outputs.new-tag }}
+          name: LeftClock - v${{ steps.tagger.outputs.new-tag }}
           body: ${{ steps.changelog.outputs.changelog }}
