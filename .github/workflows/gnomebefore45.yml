@@ -23,5 +23,3 @@ jobs:
           name: Release ${{ github.ref }} - Gnome<=44
           body: ${{ steps.changelog.outputs.changelog }}
           token: ${{ secrets.GITHUB_TOKEN }}
-          draft: false
-          prerelease: false
