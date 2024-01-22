@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v3
       - name: Generate changelog #Generate Changelog
         id: changelog
-        uses: metcalfc/changelog-generator@4.2.0
+        uses: metcalfc/changelog-generator@v4.2.0
         with:
           myToken: ${{ secrets.GIT_PAT_TOKEN }}
       - name: Create Release #Create a lease based on a new tag
