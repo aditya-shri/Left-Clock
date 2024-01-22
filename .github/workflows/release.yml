@@ -5,25 +5,23 @@ on:
       - main
 
 jobs:
-  build:
-    name: Create Release
+  release:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code #Checkout Code
-        uses: actions/checkout@v3
-      - name: Generate changelog #Generate Changelog
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Generate changelog
         id: changelog
         uses: metcalfc/changelog-generator@v4.2.0
         with:
           myToken: ${{ secrets.GITHUB_TOKEN }}
-      - name: Create Release #Create a lease based on a new tag
+      - name: Create Release
         id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: ncipollo/release-action@v1
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
+          tag: ${{ github.ref }}
+          name: Release ${{ github.ref }}
           body: ${{ steps.changelog.outputs.changelog }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           draft: false
           prerelease: false
